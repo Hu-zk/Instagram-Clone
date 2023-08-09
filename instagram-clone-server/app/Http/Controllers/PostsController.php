@@ -40,9 +40,10 @@ class PostsController extends Controller
         ]);
     }
 
-    public function likePost(Request $request, Post $post)
+    public function like($post_id)
     {
         $user = auth()->user();
+        $post = Post::find($post_id);
 
         if (!$user->likes->contains($post)) {
             $like = new Like([
@@ -50,6 +51,7 @@ class PostsController extends Controller
                 'post_id' => $post->id,
             ]);
             $like->save();
+            $post->increment('likes_count');
         }
 
         return response()->json([
@@ -58,12 +60,15 @@ class PostsController extends Controller
         ]);
     }
 
-    public function unlikePost(Request $request, Post $post)
+    public function unlike($post_id)
     {
         $user = auth()->user();
+        $post = Post::find($post_id);
 
         if ($user->likes->contains($post)) {
-            $user->likes()->where('post_id', $post->id)->delete();
+            echo $user->likes;
+            $user->likes->where('post_id', $post->id)->first()->delete($post);
+            $post->decrement('likes_count');
         }
 
         return response()->json([
