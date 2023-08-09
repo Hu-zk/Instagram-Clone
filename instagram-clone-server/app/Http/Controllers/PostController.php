@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Like;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     public function createPost(Request $request)
     {
