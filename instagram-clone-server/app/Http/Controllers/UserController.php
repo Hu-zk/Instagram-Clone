@@ -14,8 +14,7 @@ class UserController extends Controller
 
         $auth_user = Auth::user();
 
-        $users = User::where('username', 'LIKE', "%$searchItem%")
-            ->orWhere('name', 'LIKE', "%$searchItem%")->get();
+        $users = User::where('username', 'LIKE', "%$searchItem%")->orWhere('name', 'LIKE', "%$searchItem%")->get();
 
         // foreach($users as $user) {
         //     $user->is_followed_by_me = $auth_user->isFollowedBy($user);
