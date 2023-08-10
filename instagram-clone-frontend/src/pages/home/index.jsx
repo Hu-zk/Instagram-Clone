@@ -7,21 +7,20 @@ import axios from 'axios'
 function Home() {
 
     const [posts, setPosts]= useState([])
-
+    
     const fetchPosts = async () =>{
         const token = localStorage.getItem('jwtToken');
-        // const response = await axios.get("http://127.0.0.1:8000/api/user/following/posts")
         const response = await axios.get("http://127.0.0.1:8000/api/user/following/posts", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         });
-        console.log(response.data.data)
-        setPosts(response.data.data)
+        console.log(response.data.posts)
+        setPosts(response.data.posts)
     }
-
+    
     useEffect(()=>{
-    fetchPosts()
+        fetchPosts()
     },[])
 
     return (
