@@ -24,19 +24,9 @@ function Create({setPosts , isCreateVisible}) {
                 const base64Image = reader.result.split(',')[1];
                 const token = localStorage.getItem('jwtToken');
                 
-                const response = await axios.post(
-                    'http://127.0.0.1:8000/api/posts',
-                    {
-                        image: base64Image,
-                    },
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                    );
-                    console.log(response.data.post);
-                };
+                const response = await axios.post('http://127.0.0.1:8000/api/posts',{image: base64Image,},{headers: {Authorization: `Bearer ${token}`,},});
+                console.log(response.data.post);
+            };
             reader.readAsDataURL(image);
         } catch (error) {
             console.error('Error creating post:', error);

@@ -176,6 +176,38 @@ a:hover {
   padding: 2em;
   margin: 2em;
   height: fit-content;
+  width: 18em;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.search-result {
+  padding: 0.5em;
+  margin: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1pt solid black;
+  border-radius: 0.5em;
+  background-color: #dbdbdb;
+}
+
+.search-result button {
+  color: white;
+  background-color: rgb(37, 128, 255);
+  font-weight: 400;
+  font-size: 0.6em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.search-result button:hover {
+  background-color: blue;
 }
 
 .display-none {

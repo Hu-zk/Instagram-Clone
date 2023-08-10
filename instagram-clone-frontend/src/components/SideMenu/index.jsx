@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SideMenu({setCreateVisible, isCreateVisible}) {
+function SideMenu({setCreateVisible, isCreateVisible,setSearchVisible, isSearchVisible}) {
 
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
@@ -25,47 +25,45 @@ function SideMenu({setCreateVisible, isCreateVisible}) {
                         <h4>Home</h4>
                     </div>
                 </a>
-                <a href="./search">
-                    <div className="menu-pages">
+                    <div className="menu-pages" onClick={() => setSearchVisible(!isSearchVisible)}>
                         <div className="menu-titles">
-                        <i class="fa-solid fa-magnifying-glass menu-icons"></i>
+                        <i className="fa-solid fa-magnifying-glass menu-icons"></i>
                         </div>
                         <h4>Search</h4>
                     </div>
-                </a>
                     <div className="menu-pages">
                         <div className="menu-titles">
-                        <i class="fa-regular fa-compass menu-icons"></i>
+                        <i className="fa-regular fa-compass menu-icons"></i>
                         </div>
                         <h4>Explore</h4>
                     </div>
                     <div className="menu-pages">
                         <div className="menu-titles">
-                        <i class="fa-solid fa-film menu-icons"></i>
+                        <i className="fa-solid fa-film menu-icons"></i>
                         </div>
                         <h4>Reels</h4>
                     </div>
                     <div className="menu-pages">
                         <div className="menu-titles">
-                        <i class="fa-regular fa-comment menu-icons"></i>
+                        <i className="fa-regular fa-comment menu-icons"></i>
                         </div>
                         <h4>Messages</h4>
                     </div>
                     <div className="menu-pages">
                         <div className="menu-titles">
-                        <i class="fa-regular fa-heart menu-icons"></i>
+                        <i className="fa-regular fa-heart menu-icons"></i>
                         </div>
                         <h4>Notifications</h4>
                     </div>
                     <div className="menu-pages" onClick={() => setCreateVisible(!isCreateVisible)} >
                         <div className="menu-titles">
-                        <i class="fa-regular fa-square-plus menu-icons"></i>
+                        <i className="fa-regular fa-square-plus menu-icons"></i>
                         </div>
                         <h4>Create</h4>
                     </div>
                     <div className="menu-pages">
                         <div className="menu-titles">
-                        <i class="fa-regular fa-user menu-icons"></i>
+                        <i className="fa-regular fa-user menu-icons"></i>
                         </div>
                         <h4>Profile</h4>
                     </div>
@@ -73,7 +71,7 @@ function SideMenu({setCreateVisible, isCreateVisible}) {
 
                 <div className="menu-pages" onClick={handleLogout}>
                     <div className="menu-titles">
-                    <i class="fa-solid fa-right-from-bracket menu-icons"></i>
+                    <i className="fa-solid fa-right-from-bracket menu-icons"></i>
                     </div>
                     <h4>Logout</h4>
                 </div>

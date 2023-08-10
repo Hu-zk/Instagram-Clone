@@ -8,6 +8,7 @@ import Search from '../../components/Search'
 function Home() {
 
     const [isCreateVisible, setCreateVisible] = useState(false);
+    const [isSearchVisible, setSearchVisible] = useState(false);
 
     const [posts, setPosts]= useState([])
     
@@ -50,13 +51,13 @@ function Home() {
 
     return (
         <div className='home-page'>
-            <SideMenu setCreateVisible={setCreateVisible} isCreateVisible={isCreateVisible}/>
+            <SideMenu setCreateVisible={setCreateVisible} isCreateVisible={isCreateVisible} setSearchVisible={setSearchVisible} isSearchVisible={isSearchVisible}/>
             <div className='home-content'>
                 <Create setPosts={setPosts} isCreateVisible={isCreateVisible}  />
                 
                 <Post posts={posts} handleUnfollow={handleUnfollow} handleLike={handleLike}/>
             </div>
-            <Search/>
+            <Search handleUnfollow={handleUnfollow} isSearchVisible={isSearchVisible}/>
         </div>
     )
 }

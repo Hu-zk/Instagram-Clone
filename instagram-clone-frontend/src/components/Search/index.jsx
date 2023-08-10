@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Search() {
+function Search({handleUnfollow,isSearchVisible}) {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
@@ -9,17 +9,19 @@ function Search() {
         if (searchQuery.trim() === '') {
             return;
         }
-
+        
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/search?q=${searchQuery}`);
-            setSearchResults(response.data.results);
+            const token = localStorage.getItem('jwtToken');
+            const response = await axios.get(`http://127.0.0.1:8000/api/search/${searchQuery}`,{headers: {Authorization: `Bearer ${token}`,},});
+            setSearchResults(response.data.users);
+            console.error(response.data);
         } catch (error) {
             console.error('Error searching:', error);
         }
     };
 
     return (
-        <div className="search-component">
+        <div className={`${isSearchVisible ? 'search-component' : 'display-none'}`}>
             <input
                 type="text"
                 placeholder="Search"
@@ -30,8 +32,8 @@ function Search() {
             <div className="search-results">
                 {searchResults.map((result) => (
                     <div key={result.id} className="search-result">
-                        <p>{result.name}</p>
-                        {/* Display more information about the search result as needed */}
+                        <h4>{result.username}</h4>
+                        <button onClick={() => handleUnfollow(result.id)}>follow</button>
                     </div>
                 ))}
             </div>
