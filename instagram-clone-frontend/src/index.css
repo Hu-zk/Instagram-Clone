@@ -163,8 +163,11 @@ a:hover {
 .home-content {
   display: flex;
   flex-direction: column;
-  /* border: #000000 1pt solid; */
   gap: 1em;
+}
+
+.display-none {
+  display: none;
 }
 
 .create-post {
@@ -210,8 +213,8 @@ a:hover {
 }
 
 .post-img {
-  width: 400px;
-  height: 400px;
+  width: 468px;
+  height: 468px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,7 +239,6 @@ a:hover {
   height: 100%;
   background-color: #fffefe;
   border: 1pt rgb(214, 214, 214) solid;
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 
@@ -254,7 +256,7 @@ a:hover {
   display: flex;
   align-items: center;
   margin-bottom: 0.3em;
-  padding: 1em 0 1em 1.2em;
+  padding: 0.5em 0 0.5em 1.2em;
   cursor: pointer;
 }
 
@@ -279,7 +281,7 @@ a:hover {
   justify-content: center;
   width: 30px;
   height: 30px;
-  background-color: rgb(0, 0, 0);
+  color: black;
 }
 
 .menu-pages h4 {

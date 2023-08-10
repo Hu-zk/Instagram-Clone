@@ -6,6 +6,8 @@ import axios from 'axios'
 
 function Home() {
 
+    const [isCreateVisible, setCreateVisible] = useState(false);
+
     const [posts, setPosts]= useState([])
     
     const fetchPosts = async () =>{
@@ -47,9 +49,9 @@ function Home() {
 
     return (
         <div className='home-page'>
-            <SideMenu/>
+            <SideMenu setCreateVisible={setCreateVisible} isCreateVisible={isCreateVisible}/>
             <div className='home-content'>
-                <Create setPosts={setPosts}/>
+                <Create setPosts={setPosts} isCreateVisible={isCreateVisible}  />
                 
                 <Post posts={posts} handleUnfollow={handleUnfollow} handleLike={handleLike}/>
             </div>

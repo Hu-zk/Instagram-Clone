@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SideMenu() {
+function SideMenu({setCreateVisible, isCreateVisible}) {
 
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
@@ -11,7 +11,6 @@ function SideMenu() {
     return (
         <div id="side-menu">
 
-
             <div className="insta-title">
                 Instagram
             </div>
@@ -21,7 +20,7 @@ function SideMenu() {
                 <a href="./home">
                     <div className="menu-pages">
                         <div className="menu-titles">
-                            <i className="fa-solid fa-house menu-icons white"></i>
+                            <i className="fa-solid fa-house menu-icons "></i>
                         </div>
                         <h4>Home</h4>
                     </div>
@@ -29,16 +28,52 @@ function SideMenu() {
                 <a href="./search">
                     <div className="menu-pages">
                         <div className="menu-titles">
-                            <i className="fa-solid fa-gear menu-icons white"></i>
+                        <i class="fa-solid fa-magnifying-glass menu-icons"></i>
                         </div>
                         <h4>Search</h4>
                     </div>
                 </a>
+                    <div className="menu-pages">
+                        <div className="menu-titles">
+                        <i class="fa-regular fa-compass menu-icons"></i>
+                        </div>
+                        <h4>Explore</h4>
+                    </div>
+                    <div className="menu-pages">
+                        <div className="menu-titles">
+                        <i class="fa-solid fa-film menu-icons"></i>
+                        </div>
+                        <h4>Reels</h4>
+                    </div>
+                    <div className="menu-pages">
+                        <div className="menu-titles">
+                        <i class="fa-regular fa-comment menu-icons"></i>
+                        </div>
+                        <h4>Messages</h4>
+                    </div>
+                    <div className="menu-pages">
+                        <div className="menu-titles">
+                        <i class="fa-regular fa-heart menu-icons"></i>
+                        </div>
+                        <h4>Notifications</h4>
+                    </div>
+                    <div className="menu-pages" onClick={() => setCreateVisible(!isCreateVisible)} >
+                        <div className="menu-titles">
+                        <i class="fa-regular fa-square-plus menu-icons"></i>
+                        </div>
+                        <h4>Create</h4>
+                    </div>
+                    <div className="menu-pages">
+                        <div className="menu-titles">
+                        <i class="fa-regular fa-user menu-icons"></i>
+                        </div>
+                        <h4>Profile</h4>
+                    </div>
             </div>
 
                 <div className="menu-pages" onClick={handleLogout}>
                     <div className="menu-titles">
-                        <i className="fa-solid fa-gear menu-icons white"></i>
+                    <i class="fa-solid fa-right-from-bracket menu-icons"></i>
                     </div>
                     <h4>Logout</h4>
                 </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 
-function Create({setPosts}) {
+function Create({setPosts , isCreateVisible}) {
 
     const [image, setImage] = useState(null);
 
@@ -44,7 +44,7 @@ function Create({setPosts}) {
         }
     }
     return (
-        <div className='create-post'>
+        <div className={`${isCreateVisible ? 'create-post' : 'display-none'}`}>
             <h2>Create Post</h2>
 
             <label htmlFor="image">Upload your Image :</label>
