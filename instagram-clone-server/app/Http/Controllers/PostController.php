@@ -7,15 +7,14 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Like;
-use Psy\Util\Str;
 
 class PostController extends Controller
 {
     public function createPost(Request $request)
     {
-        $request->validate([
-            'image' => 'required|string|max:2048',
-        ]);
+        // $request->validate([
+        //     'image' => 'required|string|max:2048',
+        // ]);
 
         $base64Image = $request->input('image');
         $decodedImage = base64_decode($base64Image);
