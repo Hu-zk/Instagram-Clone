@@ -3,6 +3,7 @@ import SideMenu from '../../components/SideMenu'
 import Create from '../../components/CreatePost'
 import Post from '../../components/Post'
 import axios from 'axios'
+import Search from '../../components/Search'
 
 function Home() {
 
@@ -55,6 +56,7 @@ function Home() {
                 
                 <Post posts={posts} handleUnfollow={handleUnfollow} handleLike={handleLike}/>
             </div>
+            <Search/>
         </div>
     )
 }

@@ -36,7 +36,6 @@ function Create({setPosts , isCreateVisible}) {
                     }
                     );
                     console.log(response.data.post);
-                    // setPosts((posts) => [...posts,response.data.post]);
                 };
             reader.readAsDataURL(image);
         } catch (error) {

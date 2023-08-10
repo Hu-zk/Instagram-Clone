@@ -153,17 +153,29 @@ a:hover {
 
 .home-page {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
-  width: 100vw;
   padding: 1em;
+  margin-left: 300px;
 }
 
 .home-content {
   display: flex;
+  /* border: #3c4043 1pt solid; */
   flex-direction: column;
   gap: 1em;
+}
+
+.search-component {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 2pt solid black;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  padding: 2em;
+  margin: 2em;
+  height: fit-content;
 }
 
 .display-none {
