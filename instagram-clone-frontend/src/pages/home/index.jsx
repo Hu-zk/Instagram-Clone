@@ -15,9 +15,31 @@ function Home() {
                 Authorization: `Bearer ${token}`,
             },
         });
-        console.log(response.data.posts)
+        // console.log(response.data.posts)
         setPosts(response.data.posts)
     }
+
+    const handleUnfollow = async(user_id) => {
+        const token = localStorage.getItem('jwtToken');
+        await axios.get(`http://127.0.0.1:8000/api/toggle-follow/${user_id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        console.log(`Unfollow ${user_id}`);
+        fetchPosts()
+    };
+
+    const handleLike = async(post_id) => {
+        const token = localStorage.getItem('jwtToken');
+        await axios.get(`http://127.0.0.1:8000/api/posts/${post_id}/toggle-like`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        console.log(`Like post with ID: ${post_id}`);
+        fetchPosts()
+    };
     
     useEffect(()=>{
         fetchPosts()
@@ -29,7 +51,7 @@ function Home() {
             <div className='home-content'>
                 <Create setPosts={setPosts}/>
                 
-                <Post posts={posts}/>
+                <Post posts={posts} handleUnfollow={handleUnfollow} handleLike={handleLike}/>
             </div>
         </div>
     )

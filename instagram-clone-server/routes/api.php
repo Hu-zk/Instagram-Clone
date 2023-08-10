@@ -17,8 +17,8 @@ Route::middleware('auth:api')->group(function () {
     Route::post('refresh', [AuthController::class, 'refresh']);
 
     Route::post('posts', [PostController::class, 'createPost']);
-    Route::post("/posts/{postId}/toggle-like", [PostController::class, 'toggleLike']);
     Route::post('/search/{searchItem}', [UserController::class, 'searchUsers']);
-    Route::post("/toggle-follow/{userId}", [UserController::class, "follow"]);
+    Route::get("/posts/{postId}/toggle-like", [PostController::class, 'toggleLike']);
+    Route::get("/toggle-follow/{userId}", [UserController::class, "follow"]);
     Route::get('/user/following/posts', [PostController::class, 'getFollowingPosts']);
 });
