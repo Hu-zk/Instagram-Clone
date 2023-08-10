@@ -85,7 +85,7 @@ form {
 }
 
 input:focus {
-  background-color: #fffbed;
+  background-color: #edf1ff;
 }
 
 .user-info {
@@ -137,7 +137,7 @@ button:hover {
 
 a {
   text-decoration: none;
-  color: rgb(125, 96, 0);
+  color: rgb(0, 19, 127);
   font-weight: 800;
   margin: 0.2em 0;
 }
@@ -148,7 +148,7 @@ a {
 }
 
 a:hover {
-  color: rgb(247, 183, 6);
+  color: rgb(6, 122, 247);
 }
 
 #error-message {

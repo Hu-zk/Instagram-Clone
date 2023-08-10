@@ -21,8 +21,9 @@ function Login() {
             if (token) {
                 localStorage.setItem('jwtToken', token);
                 localStorage.setItem('userData',data);
-                setAuthToken(token);
-                window.location.href='http://localhost:3000/display'
+                setAuthToken(token);            
+                window.location.href='http://localhost:3000/home'
+
             }
         } catch (error) {
             console.error('Login failed:', error);

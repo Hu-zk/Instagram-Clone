@@ -5,6 +5,7 @@ function Register() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
 
@@ -12,14 +13,19 @@ function Register() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/register', {
-                name,
-                username,
-                email,
-                password,
-            });
-            console.log(response.data)
-            window.location.href='http://localhost:3000'
+            if (password === confirmPassword) {
+                
+                const response = await axios.post('http://127.0.0.1:8000/api/register', {
+                    name,
+                    username,
+                    email,
+                    password,
+                });
+                console.log(response.data)
+                window.location.href='http://localhost:3000/'
+            }else{
+                console.log("wrong pass")
+            }
 
         } catch (error) {
             console.error('Login failed:', error);
@@ -58,10 +64,10 @@ function Register() {
                             <input id="password" name="password" type="password" required placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </div>
 
-                        {/* <div className="label-input">
+                        <div className="label-input">
                             <label htmlFor="check-password">Confirm Pass </label>
-                            <input id="check-password" name="check-password" type="password" required placeholder="Confirm Password"/>
-                        </div> */}
+                            <input id="check-password" name="check-password" type="password" required placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value) }/>
+                        </div>
                     </div>
 
                     <button type="submit" id="sign-up" onClick={handleLogin}>Sign Up</button>
