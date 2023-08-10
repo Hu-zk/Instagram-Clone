@@ -4,6 +4,7 @@ import  { setAuthToken } from './services/api';
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 import Register from './pages/register';
 import Login from './pages/login';
+import Home from './pages/home';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -58,8 +59,8 @@ function App() {
       <Routes>
         <Route path='' element={<Login/>}></Route>
         <Route path='register' element={<Register/>}></Route>
-        <Route path='display' element={<div/>}></Route>
-        <Route path='form' element={<div/>}></Route>
+        <Route path='home' element={<Home/>}></Route>
+        <Route path='search' element={<div/>}></Route>
         <Route path='map' element={<div/>}></Route>
       </Routes>
       </BrowserRouter>
