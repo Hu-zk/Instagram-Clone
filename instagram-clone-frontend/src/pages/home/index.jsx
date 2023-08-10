@@ -9,7 +9,7 @@ function Home() {
             <SideMenu/>
             <div className='home-content'>
                 <Create/>
-                <div>
+                <div className='display-posts'>
                     <Post/>
                 </div>
             </div>
