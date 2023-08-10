@@ -1,6 +1,13 @@
 import React from 'react'
 
 function SideMenu() {
+
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('userData');
+        window.location.href='http://localhost:3000/'
+    }
+
     return (
         <div id="side-menu">
 
@@ -28,14 +35,13 @@ function SideMenu() {
                     </div>
                 </a>
             </div>
-                <a href="./logout">
-                    <div className="menu-pages">
-                        <div className="menu-titles">
-                            <i className="fa-solid fa-gear menu-icons white"></i>
-                        </div>
-                        <h4>Logout</h4>
+
+                <div className="menu-pages" onClick={handleLogout}>
+                    <div className="menu-titles">
+                        <i className="fa-solid fa-gear menu-icons white"></i>
                     </div>
-                </a>
+                    <h4>Logout</h4>
+                </div>
         </div>
     )
 }

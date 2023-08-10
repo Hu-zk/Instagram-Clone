@@ -151,18 +151,6 @@ a:hover {
   color: rgb(6, 122, 247);
 }
 
-#error-message {
-  color: red;
-}
-#error-password {
-  color: red;
-  font-weight: 500;
-}
-
-#error-password:hover {
-  color: rgb(255, 107, 107);
-}
-
 .home-page {
   display: flex;
   align-items: center;

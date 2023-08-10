@@ -16,7 +16,7 @@ function Login() {
                 password,
             });
             const token  = response.data.user.token;
-            const data  = response.data.user.id;
+            const data  = response.data.user;
             console.log(data)
             if (token) {
                 localStorage.setItem('jwtToken', token);
