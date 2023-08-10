@@ -15,7 +15,7 @@ function Home() {
                 Authorization: `Bearer ${token}`,
             },
         });
-        // console.log(response.data.posts)
+        console.log(response.data.posts)
         setPosts(response.data.posts)
     }
 

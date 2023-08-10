@@ -31,7 +31,6 @@ class PostController extends Controller
         $post->save();
 
         $imageUrl = Storage::url('post_images/' . $filename);
-        echo $imageUrl;
 
         return response()->json([
             'status' => 'success',
